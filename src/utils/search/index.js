@@ -57,11 +57,12 @@ function parseJSON(res) {
 function searchRequest(url, params, id) {
   return new Promise((resolve, reject) => {
     reqs[id] = request
-      .get(url)
-      .query(params)
+      .post(url)
+      .send(params)
       .set({
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "X-Formalist": "true"
       })
       .end((err, res) => {
         if (err) return reject(customError("searchRequest", err));
