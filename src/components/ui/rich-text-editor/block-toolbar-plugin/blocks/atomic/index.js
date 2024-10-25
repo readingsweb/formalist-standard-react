@@ -127,11 +127,13 @@ class AtomicBlock extends React.Component {
     editorEmitter.off("focus", this.checkEditorSelection);
     editorEmitter.off("blur", this.checkEditorSelection);
     // Emit removed event
-    const entityData = this.entity.getData();
-    fieldBus.emit(events.internal.FORM_REMOVED, {
-      namespace: `${embeddableFormsPrefix}:${entityData.name}`,
-      form: this.form
-    });
+    if (this.entity) {
+      const entityData = this.entity.getData();
+      fieldBus.emit(events.internal.FORM_REMOVED, {
+        namespace: `${embeddableFormsPrefix}:${entityData.name}`,
+        form: this.form
+      });
+    }
   }
 
   componentDidUpdate() {

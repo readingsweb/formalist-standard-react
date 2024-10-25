@@ -26,7 +26,7 @@ export function removeAtomicBlock(key, editorState, focusAfter = true) {
 
   // Decide next focus based on deletion direction
   // focusAfter = select the previous block
-  if (focusAfter === false) {
+  if (focusAfter === false || (selectedBlockIndex + 1 >= blockMap.size)) {
     selectionBlockIndex = selectedBlockIndex - 1;
     const selectionBlock = blockMap.get(blockKeys[selectionBlockIndex]);
     selectionBlockKey = selectionBlock.getKey();
