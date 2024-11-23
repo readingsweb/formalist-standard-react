@@ -5,7 +5,7 @@ import uid from "uid";
 import classNames from "classnames";
 import s3Upload from "../../../utils/s3-upload";
 import * as attacheUpload from "attache-upload";
-import Immutable from "immutable";
+import { fromJS } from "immutable";
 import Clipboard from "clipboard";
 import { events } from "formalist-compose";
 
@@ -507,7 +507,7 @@ class MultiUploadField extends React.Component {
         ? uploadedFiles
         : uploadedFiles[0];
 
-    this.props.actions.edit(val => Immutable.fromJS(value));
+    this.props.actions.edit(val => fromJS(value));
   };
 
   /**

@@ -1,5 +1,5 @@
 import React from "react";
-import Immutable from "immutable";
+import { is } from "immutable";
 import ImmutablePropTypes from "react-immutable-proptypes";
 import * as styles from "./styles";
 
@@ -12,7 +12,7 @@ class FieldErrors extends React.Component {
   };
 
   shouldComponentUpdate(nextProps) {
-    return !Immutable.is(this.props.errors, nextProps.errors);
+    return !is(this.props.errors, nextProps.errors);
   }
 
   render() {
