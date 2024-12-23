@@ -36,7 +36,9 @@ class Many extends React.Component {
       action_label: PropTypes.string,
       sortable: PropTypes.bool,
       moveable: PropTypes.bool,
-      max_height: PropTypes.string
+      max_height: PropTypes.string,
+      allow_create: PropTypes.bool,
+      allow_update: PropTypes.bool
     }),
     template: PropTypes.object,
     children: ImmutablePropTypes.list,
@@ -131,7 +133,7 @@ class Many extends React.Component {
     const { contentsKey } = this.state;
 
     // Extract attributes from Immutable.Map
-    let { label, action_label, placeholder, moveable } = attributes.toJS();
+    let { label, action_label, placeholder, moveable, allow_create, allow_destroy } = attributes.toJS();
     label = label || name.replace(/_/, " ");
 
     // Set up label classes
@@ -144,14 +146,16 @@ class Many extends React.Component {
         <div className={styles.header}>
           <h3 className={labelClassNames}>{label}</h3>
           <div className={styles.controls}>
-            <button className={styles.addButton} onClick={this.addChild}>
-              {action_label || "Add item"}
-            </button>
+            {allow_create ? (
+              <button className={styles.addButton} onClick={this.addChild}>
+                {action_label || "Add item"}
+              </button>
+            ) : ( '' )}
           </div>
         </div>
         {children.count() > 0 ? (
           <Sortable
-            canRemove
+            canRemove={allow_destroy}
             onRemove={this.onRemove}
             onDrop={this.onDrop}
             canMove={moveable}
