@@ -26,6 +26,7 @@ const defaults = {
     "unstyled",
     "header-one",
     "header-two",
+    "header-three",
     "unordered-list-item",
     "ordered-list-item",
     "blockquote",
