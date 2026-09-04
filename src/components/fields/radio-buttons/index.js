@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ImmutablePropTypes from "react-immutable-proptypes";
 import classNames from "classnames";
-import uid from "uid";
+import { uid } from "uid";
 
 // Import components
 import FieldErrors from "../common/errors";

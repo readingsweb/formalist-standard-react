@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import uid from "uid";
+import { uid } from "uid";
 import classNames from "classnames";
 import withoutKeys from "../../../utils/without-keys";
 import * as styles from "./styles";

@@ -1,4 +1,4 @@
-import uid from "uid";
+import { uid } from "uid";
 import { css } from "emotion";
 import * as fields from "../field-styles";
 import { buttons } from "../../ui/styles";

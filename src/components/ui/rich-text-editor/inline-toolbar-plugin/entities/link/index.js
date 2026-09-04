@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Entity } from "draft-js";
-import uid from "uid";
+import { uid } from "uid";
 // Components
 import Input from "../../../../input";
 import Checkbox from "../../../../checkbox";

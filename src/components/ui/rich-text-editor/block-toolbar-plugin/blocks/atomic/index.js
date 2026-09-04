@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import template from "../../../../../../";
 import React from "react";
-import uid from "uid";
+import { uid } from "uid";
 import PropTypes from "prop-types";
 import { Entity } from "draft-js";
 import { events } from "formalist-compose";

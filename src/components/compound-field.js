@@ -1,6 +1,6 @@
 import React from "react";
 import ImmutablePropTypes from "react-immutable-proptypes";
-import uid from "uid";
+import { uid } from "uid";
 
 const styles = {
   base: uid(10) // Empty placeholder class

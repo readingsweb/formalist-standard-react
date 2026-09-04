@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ImmutablePropTypes from "react-immutable-proptypes";
-import uid from "uid";
+import { uid } from "uid";
 import classNames from "classnames";
 import s3Upload from "../../../utils/s3-upload";
 import * as attacheUpload from "attache-upload";
