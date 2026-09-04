@@ -7,7 +7,7 @@ export default function createDOM() {
   const { window } = new JSDOM("<!doctype html><html><body></body></html>");
   global.window = window;
   global.document = window.document;
-  global.navigator = { userAgent: "node.js" };
+  // global.navigator = { userAgent: "node.js" };
   // Hack to register RAQ
   global.window.requestAnimationFrame = function(c) {
     c();
